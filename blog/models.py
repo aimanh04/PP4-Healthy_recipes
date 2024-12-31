@@ -30,7 +30,7 @@ class Recipe(models.Model):
     class Meta:
         ordering = ["-created_on", "author"]
     def __str__(self):
-        return f"{self.title} | recipe added by {self.author}"
+        return f"Recipe name: {self.title} | Recipe added by: {self.author}"
 
 
 class Comment(models.Model):
@@ -51,4 +51,4 @@ class Comment(models.Model):
     class Meta:
         ordering = ["created_on"]
     def __str__(self):
-        return f"Comment {self.body} comment left by {self.author}"
+        return f"Comment: {self.body} | Comment left by: {self.author}"
