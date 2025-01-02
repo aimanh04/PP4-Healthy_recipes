@@ -20,7 +20,7 @@ class Recipe(models.Model):
     cook_time = models.CharField(max_length=100)
     servings = models.IntegerField(choices=SERVINGS)
     ingredients = models.TextField(blank=True)
-    instruction = models.TextField()
+    instructions = models.TextField()
     excerpt = models.TextField(blank=True)
     notes = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
