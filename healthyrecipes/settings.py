@@ -31,6 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-aimanh04-pp4healthyreci-l4n6mh31w5w.ws-eu117.gitpod.io',
+    'localhost',
+    'http://127.0.0.1/',
+    '127.0.0.1',
     '.herokuapp.com'
 ]
 
@@ -95,8 +98,9 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
+    "https://*.kz5d418g-8000.euw.devtunnels.ms",
     "https://*.herokuapp.com",
-    "https://*.gitpod.io",
+    "https://*.www.devtunnels.ms",
 ]
 
 
