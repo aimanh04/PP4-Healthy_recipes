@@ -34,6 +34,13 @@ def recipe_detail(request, slug):
     comments = recipe.comments.all().order_by("-created_on")
     comment_count = recipe.comments.filter(approved=True).count()
     comment_form = CommentForm()
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.recipe = recipe
+            comment.save()
 
     return render(
         request,
