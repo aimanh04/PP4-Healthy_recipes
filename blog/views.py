@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Recipe
+from .forms import CommentForm
 
 
 class RecipeList(generic.ListView):
@@ -31,7 +32,8 @@ def recipe_detail(request, slug):
     queryset = Recipe.objects.filter(status=1)
     recipe = get_object_or_404(queryset, slug=slug)
     comments = recipe.comments.all().order_by("-created_on")
-    total_comments = recipe.comments.filter(approved=True).count()
+    comment_count = recipe.comments.filter(approved=True).count()
+    comment_form = CommentForm()
 
     return render(
         request,
@@ -39,7 +41,8 @@ def recipe_detail(request, slug):
         {
             "recipe": recipe,
             "comments": comments,
-            "total_comments": total_comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
         }
         # {"recipe": recipe,
         #  "coder": "Matt Rudge"},
