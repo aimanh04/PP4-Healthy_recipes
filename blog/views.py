@@ -64,7 +64,7 @@ def recipe_detail(request, slug):
 
 def comment_edit(request, slug, comment_id):
     """
-    View to edit comments on the Recipe posts 
+    view to edit comments
     """
     if request.method == "POST":
 
@@ -78,9 +78,9 @@ def comment_edit(request, slug, comment_id):
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.success(request, 'Your comment has been updated and is now pending approval!')
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.error(request, 'An error occurred while updating your comment!')
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
