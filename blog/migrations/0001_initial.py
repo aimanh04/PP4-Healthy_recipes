@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+import cloudinary.models
 
 
 class Migration(migrations.Migration):
@@ -29,6 +30,7 @@ class Migration(migrations.Migration):
                 ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
                 ('updated_on', models.DateTimeField(auto_now=True)),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='recipe_posts', to=settings.AUTH_USER_MODEL)),
+                ('feat_image', cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image')),
             ],
         ),
     ]
