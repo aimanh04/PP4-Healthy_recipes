@@ -3,23 +3,53 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row">
+    <!-- About Healthy Recipes Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">About Healthy Recipes</h1>
+    </div>
+
+    <!-- About Section -->
+    <div class="row bg-light rounded shadow p-4">
         <div class="col-12 col-md-4 text-center">
-            <img src="{% static 'images/feat-about-img.jpg' %}" class="profile-image" alt="{{ about.title }}">
-            <!-- {% if "placeholder" in about.feat_image.url %}
-            <img src="{% static 'images/feat-about-img.jpg' %}" class="profile-image" alt="{{ about.title }}">
-            {% else %}
-            <img src="{{ about.feat_image.url }}" class="profile-image" alt="{{ about.title }}">
-            {% endif %} -->
+            <!-- Profile Image -->
+            <img src="{% static 'images/feat-about-img.jpg' %}" class="profile-image img-fluid rounded-circle shadow"
+                alt="{{ about.title }}">
         </div>
         <div class="col-12 col-md-8">
-            <h2>{{ about.title }}</h2>
-            {{ about.body | safe }}
+            <h2 class="display-5 fw-bold mt-3 mt-md-0">{{ about.title }}</h2>
+            <hr>
+            <p class="lead">
+                My name is Aiman Hawaemanoh, and this project is part of my journey with the Code Institute for my fourth
+                milestone project (PP4).
+                Through "Healthy Recipes," I aim to showcase my skills in web development while sharing my passion for
+                healthy and delicious food.
+                This blog combines creativity, technical expertise, and a commitment to promoting wellness through cooking.
+            </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col text-right">
-            <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+
+    <!-- Who We Are Section -->
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h3 class="fw-bold">Who We Are</h3>
+            <p class="text-muted">
+                Healthy Recipes is a vibrant community of food enthusiasts, nutrition experts, and home cooks united by a shared passion for creating balanced and flavorful meals. 
+                Our mission is to bring people together through food that nourishes the body and uplifts the soul. We believe that eating well doesn't have to be complicated or restrictive—it's about discovering the joy in wholesome, delicious ingredients. 
+                From quick weekday meals to indulgent treats with a healthy twist, we’re here to inspire you every step of the way.
+            </p>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h3 class="fw-bold">Our Mission</h3>
+            <p class="text-muted">
+                At Healthy Recipes, our mission is to empower individuals and families to make healthier food choices without sacrificing taste or variety. 
+                We curate and share a wide array of recipes that prioritize natural ingredients, balanced nutrition, and innovative cooking techniques. 
+                Whether you're a seasoned chef or a kitchen beginner, we strive to make healthy cooking approachable, enjoyable, and inclusive for everyone. 
+                Together, let’s embark on a journey toward better health, one recipe at a time.
+            </p>
         </div>
     </div>
 </div>
