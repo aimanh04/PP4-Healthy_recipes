@@ -25,10 +25,13 @@
                 <!-- The Recipe details go inside the card-text. -->
                 <!-- MORE NEEDS TO ADD HERE -->
                 <!-- <h2>{{ coder }}</h2> -->
-                <p class="card-text">
+                <p><strong>Preparing:</strong>{{ recipe.prep_time }}  <strong>Cooking:</strong>{{ recipe.cook_time }}
+                </p>
+                <!-- <p class="card-text"> 
                     {{ recipe.prep_time | safe }}
                     {{ recipe.cook_time | safe }}
-                </p>
+                </p> -->
+                
             </div>
         </div>
     </div>
