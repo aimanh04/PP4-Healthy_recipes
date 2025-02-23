@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'blog',
     'about',
     'contact',
-    'livereload',
 ]
 
 SITE_ID = 1
