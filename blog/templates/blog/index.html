@@ -5,6 +5,15 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
+        <!-- Hero section-->
+        <div class="hero">
+            <div class="hero-overlay">
+                <div class="container">
+                    <h1 class="display-4 fw-bold">WELCOME TO HEALTHY RECIPES!</h1>
+                    <p class="lead">Your Guide to Culinary Creativity</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Recipe Entries Column -->
         <div class="col-12 mt-3 left">
@@ -18,7 +27,7 @@
                                 <img class="card-img-top" src="{% static 'images/placeholder.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
+                                <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ recipe.author }}</p>
