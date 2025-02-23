@@ -1,11 +1,46 @@
 body {
     background-color: #F9FAFC;
-    color: #4f0a0a;
 }
 
-h1 {
-    color: #701212;
+/* Hero section styles */
+
+.hero {
+    position: relative;
+    height: 50vh; /* Smaller section height */
+    background: url('/static/images/hero-image.jpg') no-repeat center center;
+    background-size: cover; /* Ensure the image covers the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1; /* Ensure content is above the overlay */
 }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slightly dark overlay for better text visibility */
+    z-index: -1; /* Send overlay behind the content */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
 /* .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -47,7 +82,7 @@ h1 {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #d8baba;
+    background-color: #701212;
 }
 
 .scale {

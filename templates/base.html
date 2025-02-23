@@ -73,12 +73,19 @@
                     {% endif %}
 
                 </ul>
-                <span class="navbar-text text-muted">
-                    Eat Well & Live Well
-                </span>
+                <!-- Logged in / Not logged in -->
+                <div class="navbar-text text-muted">
+                    {% if user.is_authenticated %}
+                    <p class="text-end m-3">You are logged in as {{ user }}</p>
+                    {% else %}
+                    <p class="text-end m-3">You are not logged in</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>
+
+
     <!-- displaying Django messages -->
     <div class="container">
         <div class="row">
@@ -95,11 +102,6 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->

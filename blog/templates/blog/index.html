@@ -7,12 +7,16 @@
     <div class="row">
         <!-- Hero section-->
         <div class="hero">
-            <div class="hero-overlay">
-                <div class="container">
-                    <h1 class="display-4 fw-bold">WELCOME TO HEALTHY RECIPES!</h1>
-                    <p class="lead">Your Guide to Culinary Creativity</p>
-                </div>
+            <div>
+                <h1>WELCOME TO HEALTHY RECIPES!</h1>
+                <p>Your Guide to Culinary Creativity</p>
             </div>
+        </div>
+
+        <!-- Recipes Section Heading -->
+        <div class="col-12 mt-3">
+            <h2>Recipes</h2>
+            <hr>
         </div>
 
         <!-- Recipe Entries Column -->
@@ -30,7 +34,7 @@
                                 <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ recipe.author }}</p>
+                                    <p class="author">RECIPE: {{ recipe.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="post-link">
