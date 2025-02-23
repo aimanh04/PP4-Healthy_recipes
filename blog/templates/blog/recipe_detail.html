@@ -75,18 +75,19 @@
             <h3 class="text-primary">Comments</h3>
             <div class="card-body">
                 {% for comment in comments %}
-                <div
+                <div class="p-2 mb-3 border rounded comments">
+                <!-- <div
                     class="p-2 mb-3 border rounded comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="fw-bold">
+                    <p class="fw-bold"> -->
                         {{ comment.author }}
                         <span class="text-muted small"> - {{ comment.created_on }}</span>
                     </p>
                     <div id="comment{{ comment.id }}">
                         {{ comment.body | linebreaks }}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
+                    <!-- {% if not comment.approved and comment.author == user %}
                     <p class="approval text-warning small">This comment is awaiting approval</p>
-                    {% endif %}
+                    {% endif %} -->
                     {% if user.is_authenticated and comment.author == user %}
                     <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
