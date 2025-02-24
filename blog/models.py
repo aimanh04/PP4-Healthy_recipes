@@ -28,7 +28,7 @@ class Recipe(models.Model):
     excerpt = models.TextField(blank=True)
     notes = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(
         User, blank=True, related_name='recipe_likes',

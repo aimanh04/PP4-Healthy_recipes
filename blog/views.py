@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import ListView, CreateView
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.text import slugify
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from .models import Recipe, Comment, RecipeLikes, User
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
@@ -116,3 +120,20 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class RecipeAdd(SuccessMessageMixin, CreateView):
+    """
+    View to add a new recipe post
+    """
+    model = Recipe
+    template_name = 'add_recipe.html'
+    form_class = RecipeForm
+    success_url = reverse_lazy("home")
+    success_message = 'Recipe added successfully!'
+
+    def form_valid(self, form):
+        """
+        Assign the current user to the author field"""
+        form.instance.author = self.request.user
+        return super().form_valid(form)
