@@ -9,7 +9,7 @@ body {
     height: 50vh; /* Smaller section height */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Slightly dark overlay */
-        url('/static/images/hero-image.jpg') no-repeat center center;
+        url('https://res.cloudinary.com/dyqlkz4zg/image/upload/v1740362786/static/images/hero-image.jpg') no-repeat center center;
     background-size: cover; /* Ensure the image covers the section */
     display: flex;
     justify-content: center;
