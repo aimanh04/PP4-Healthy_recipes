@@ -62,12 +62,35 @@
 <!-- Comments Section -->
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <!-- Displaying count of comments -->
+        <!-- Displaying count of likes and comments side by side -->
         <div class="col-md-8">
-            <div class="text-secondary mb-3">
-                <strong><i class="far fa-comments"></i> {{ comment_count }}</strong>
+            <div class="d-flex align-items-center">
+                <!-- Like button -->
+                {% if user.is_authenticated %}
+                <form class="like-form d-inline" action="{% url 'recipe_likes' recipe.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if user in recipe.likes.all %}
+                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" class="btn-like" aria-label="Remove Like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" class="btn-like" aria-label="Add Like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    {% endif %}
+                </form>
+                {% else %}
+                <span class="text-secondary not-authenticated">
+                    <i class="far fa-heart" aria-hidden="true"></i>
+                </span>
+                {% endif %}
+                <span class="likes-count mx-2">{{ recipe.likes_count }}</span>
+        
+                <!-- Comment count -->
+                <span class="text-secondary">
+                    <i class="far fa-comments"></i> {{ comment_count }}
+                </span>
             </div>
-            <hr>
         </div>
 
         <!-- Displaying Comments -->

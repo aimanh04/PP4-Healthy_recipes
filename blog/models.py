@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 SERVINGS = [tuple([x,x]) for x in range(1,7)]
 STATUS = ((0, "Draft"), (1, "Published"))
+LIKE_OPTIONS = (('Like', 'Like'),('Unlike', 'Unlike'))
 
 # Create your models here.
 class Recipe(models.Model):
@@ -29,6 +30,9 @@ class Recipe(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField(
+        User, blank=True, related_name='recipe_likes',
+    )
 
     class Meta:
         ordering = ["-created_on", "author"]
@@ -39,6 +43,9 @@ class Recipe(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    def likes_count(self):
+        return self.likes.count()
     
 
 class Comment(models.Model):
@@ -60,3 +67,16 @@ class Comment(models.Model):
         ordering = ["created_on"]
     def __str__(self):
         return f"Comment: {self.body} | Comment left by: {self.author}"
+    
+
+class RecipeLikes(models.Model):
+    """
+    Captures a single like linked to an instance of :model:`auth.User` 
+    and :model:`blog.Recipe`.
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post_likes = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    value = models.CharField(choices=LIKE_OPTIONS, default='Like', max_length=10)
+    
+    def __str__(self):
+        return str(self.post_likes)

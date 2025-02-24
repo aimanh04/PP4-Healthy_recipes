@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic
+from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Recipe, Comment
+from .models import Recipe, Comment, RecipeLikes, User
 from .forms import CommentForm
 
 
@@ -63,6 +63,19 @@ def recipe_detail(request, slug):
             "comment_form": comment_form,
         }
     )
+
+class RecipeLikes(View):
+    """
+    View to handle the like functionality for Posts
+    """
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Recipe, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 def comment_edit(request, slug, comment_id):
