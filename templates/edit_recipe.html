@@ -13,8 +13,8 @@
                     </div>
                     <div class="card-body p-4">
                         <form method="post" enctype="multipart/form-data">
+                            {{ form | crispy }}
                             {% csrf_token %}
-                            {{ form|crispy }}
                             <div class="text-center mt-4">
                                 <button type="submit" class="btn btn-primary px-4">Save Changes</button>
                                 <a href="{% url 'home' %}" class="btn btn-outline-secondary ms-2">Cancel</a>
