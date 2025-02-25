@@ -63,6 +63,7 @@
 <div class="card-link text-center">
     {% if recipe.author.id == request.user.id %}
     <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-secondary mb-4 mt-4">Edit Recipe</a>
+    <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-danger mb-4 mt-4">Delete Recipe</a>
     {% endif %}
 </div>
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.text import slugify
@@ -162,3 +162,20 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
         Redirects to the home page upon successful update.
         """
         return reverse('recipe_detail', kwargs={"slug": self.object.slug})
+    
+
+class DeleteRecipe(SuccessMessageMixin, DeleteView):
+    """
+    View for deleting an existing recipe post
+    """
+    model = Recipe
+    template_name = "delete_recipe.html"
+    success_url = reverse_lazy("home")
+    success_message = "Your recipe has been deleted!"
+
+    def test_func(self):
+        """
+        Ensures the user is the recipe author
+        """
+        post = self.get_object()
+        return self.request.user == post.author

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<form method="post" class="text-center">
+    {% csrf_token %}
+    <p>Are you sure you want to delete this recipe, once confirmed this cannot be undone?</p>
+    {{ form }}
+    <input type="submit" value="Confirm" class="btn btn-danger">
+    <a href="{% url 'recipe_detail' recipe.slug  %}" class="cancel-link">Cancel</a>
+</form>
+
+{% endblock %}
