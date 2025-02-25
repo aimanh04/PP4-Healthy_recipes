@@ -43,14 +43,12 @@
     <div class="row">
         <div class="col-md-6">
             <h2 class="text-primary">Ingredients</h2>
-            <ul class="list-group">
             <p class="card-text">{{recipe.ingredients|safe}}</p>
             </ul>
         </div>
 
         <div class="col-md-6">
             <h2 class="text-primary">Instructions</h2>
-            <ol class="list-group list-group-numbered">
             <p class="card-text">
                 {{recipe.instructions|safe}}
             </p>
@@ -108,8 +106,8 @@
                 {% for comment in comments %}
                 <div class="p-2 mb-3 border rounded comments">
                 <!-- <div
-                    class="p-2 mb-3 border rounded comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="fw-bold"> -->
+                    class="p-2 mb-3 border rounded comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}"> --->
+                    <p class="fw-bold">
                         {{ comment.author }}
                         <span class="text-muted small"> - {{ comment.created_on }}</span>
                     </p>

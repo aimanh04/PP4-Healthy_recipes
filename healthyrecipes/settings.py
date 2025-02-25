@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     'http://127.0.0.1/',
     '127.0.0.1',
     '.herokuapp.com'
+    'https://validator.w3.org/'
 ]
 
 
