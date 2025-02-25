@@ -59,6 +59,13 @@
     </div>
 </div>
 
+<!-- CRUD for recipe post -->
+<div class="card-link text-center">
+    {% if recipe.author.id == request.user.id %}
+    <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-secondary mb-4 mt-4">Edit Recipe</a>
+    {% endif %}
+</div>
+
 <!-- Comments Section -->
 <div class="container mt-5">
     <div class="row justify-content-center">

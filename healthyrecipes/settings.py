@@ -62,6 +62,15 @@ INSTALLED_APPS = [
     'contact',
 ]
 
+# Summernote configuration
+SUMMERNOTE_CONFIG = {
+    'iframe': True,  # Use iframe mode
+    'summernote': {
+        'width': '100%',
+        'height': '400px',
+    },
+}
+
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

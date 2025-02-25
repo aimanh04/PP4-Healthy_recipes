@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.text import slugify
@@ -137,3 +137,28 @@ class RecipeAdd(SuccessMessageMixin, CreateView):
         Assign the current user to the author field"""
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+
+class EditRecipe(SuccessMessageMixin, UpdateView):
+    """
+    View to update a recipe post
+    """
+    model = Recipe
+    template_name = 'edit_recipe.html'
+    form_class = RecipeForm
+    success_url = reverse_lazy("home")
+    success_message = 'Recipe updated successfully!'
+
+    
+    def get_queryset(self):
+        """
+        Queryset restricting updates to recipes authored by the current user.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+
+    def get_success_url(self):
+        """
+        Redirects to the home page upon successful update.
+        """
+        return reverse('recipe_detail', kwargs={"slug": self.object.slug})
