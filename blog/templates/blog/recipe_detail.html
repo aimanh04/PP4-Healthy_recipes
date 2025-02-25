@@ -44,7 +44,6 @@
         <div class="col-md-6">
             <h2 class="text-primary">Ingredients</h2>
             <ul class="list-group">
-            <hr>
             <p class="card-text">{{recipe.ingredients|safe}}</p>
             </ul>
         </div>
@@ -52,8 +51,9 @@
         <div class="col-md-6">
             <h2 class="text-primary">Instructions</h2>
             <ol class="list-group list-group-numbered">
-            <hr>
-            <p class="card-text">{{recipe.instructions|safe}}</p>
+            <p class="card-text">
+                {{recipe.instructions|safe}}
+            </p>
             </ol>
         </div>
     </div>
