@@ -1,7 +1,10 @@
 # Healthy Recipes PP4
 
-Welcome to the **Healthy Recipes**!
 Link to the live project: [Healthy Recipes](https://aimanh04-healthy-recipes-471caddd57c4.herokuapp.com/)
+
+Welcome to the **Healthy Recipes**!
+Healthy Recipes is a Django-powered web application designed to inspire and assist users in discovering, sharing, and managing nutritious meal ideas. Our platform offers a diverse collection of healthy recipes, each accompanied by detailed instructions, ingredient lists, and nutritional information.​
+
 ![Healthy Recipes Am I Responsive Image]()
 
 ## TABLE OF CONTENTS
@@ -19,12 +22,46 @@ Link to the live project: [Healthy Recipes](https://aimanh04-healthy-recipes-471
 
 ## USER EXPERIENCE
 
-### User Stories:
+#### Agile Methodology
+
+<details>
+<summary>Agile</summary>
+
+<img src="readme/features//agile.png" alt="Agile Methodology">
+</details>
+The Healthy Recipes project followed Agile methodology, using iterative sprints to prioritize key features and improve based on user feedback. The MoSCoW method helped classify features, ensuring core functionalities like browsing, authentication, and recipe management were developed first. Continuous testing and refinements kept the platform user-friendly and responsive.
+
+#### MoSCoW
+
+<details>
+<summary>MoSCoW</summary>
+
+
+<img src="readme/features//moscow.png" alt="MoSCoW">
+</details>
+This project applied the MoSCoW prioritization technique to categorize its features and requirements based on their significance in achieving a minimum viable product (MVP). The MoSCoW method divides features into four groups: "Must have," "Should have," "Could have," and "Won't have," ensuring a structured approach to prioritization. By using this framework, the project focuses first on the most critical elements, guaranteeing that essential functionalities are addressed before less urgent ones.
 
 #### First-Time User Goals
+- Easily navigate the website and understand its purpose
+- Navigate through the main menu with no problems  
+- Browse available healthy recipes without needing an account  
+- Browse through the website with ease and browse thorugh the existing recipes 
+- Sign up for an account to save or submit recipes  
 
 #### Returning User Goals
+- Navigate the website and browse recipes effortlessly from the homepage.
+- Easily add new recipes with customizable text fields for certain inputs.
+- Recipe posts display like counts and a brief description directly on the homepage.
+- Recipes are structured clearly for easy reading, both on the detail page and during the submission process.
+- Users have full control over their own posts, with the ability to edit or delete them.
+- Users can leave comments on recipes and have the option to edit or delete their own comments.
+- All users can view comments left by others, ensuring engagement and interaction.
 
+#### As an admin user
+- A secure authentication process for administrators to login  
+- Full CRUD functionality by adding, editing, or deleting recipes  
+- Ensure the platform remains organized and up-to-date with relevant content  
+- Full CRUD functionality to add, edit or delete comments on recipe posts
 
 ## FEATURES
 

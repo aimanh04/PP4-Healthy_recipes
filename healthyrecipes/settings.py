@@ -33,7 +33,6 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '8000-aimanh04-pp4healthyreci-l4n6mh31w5w.ws-eu117.gitpod.io',
     'localhost',
-    'http://127.0.0.1/',
     '127.0.0.1',
     '.herokuapp.com',
 ]
