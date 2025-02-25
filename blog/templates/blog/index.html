@@ -11,9 +11,8 @@
                 <h1>WELCOME TO HEALTHY RECIPES!</h1>
                 <p>Your Guide to Culinary Creativity</p>
                 {% if user.is_authenticated %}
-                <a href="{% url 'add_recipe' %}" class="btn btn-secondary mt-4">Add Recipe</a>
                 {% else %}
-                <p>Please login to add a recipe</p>
+                <p style="font-size: 0.9em;">Please Login to Add a Recipe</p>
                 {% endif %}
             </div>
         </div>
