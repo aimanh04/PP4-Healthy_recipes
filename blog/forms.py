@@ -28,7 +28,7 @@ class RecipeForm(forms.ModelForm):
             'notes' 
         ]
         widgets = {
-            'ingredients': SummernoteWidget(),
-            'instructions': SummernoteWidget(),
+            'ingredients': SummernoteWidget(attrs={"class": "form-control"}),
+            'instructions': SummernoteWidget(attrs={"class": "form-control"}),
         }
     

@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-aimanh04-pp4healthyreci-l4n6mh31w5w.ws-eu117.gitpod.io',
@@ -62,12 +62,19 @@ INSTALLED_APPS = [
     'contact',
 ]
 
-# Summernote configuration
 SUMMERNOTE_CONFIG = {
-    'iframe': True,  # Use iframe mode
     'summernote': {
         'width': '100%',
-        'height': '400px',
+        'height': '300px',
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen']],
+        ],
+        'disableResizeEditor': True,
+        'styleTags': ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     },
 }
 
