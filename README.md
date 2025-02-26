@@ -108,6 +108,165 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 
 ## FEATURES
 
+### Blog Features
+
+<details> 
+<summary><strong>Menu Bar</strong></summary>
+
+Visting User
+![Menu Bar](readme/features/menu-visiting.png)
+
+Logged In User
+![Menu Bar](readme/features/menu-loggedin.png)
+</details>
+
+- For a visiting user the menu bar consists of Home, About, Contact, 
+Sign-up and Log-in pages.
+- For a logged in user the menu bar consists of Home, About, Contact, 
+Add Recipe and Logout pages.
+
+
+<details> 
+<summary><strong>Home Page</strong></summary>
+
+Hero Image Visiting User
+![Hero Image](readme/features/hero-visiting.png)
+
+Hero Image Logged In User
+![Hero Image](readme/features/hero-loggedin.png)
+
+List of Recipes on Home Page
+![Recipe List](readme/features/recipes-home.png)
+</details>
+
+- The home page consists of a big home image, nine recipe posts and a next button
+to redirect you to the next page
+- All recipes will be displayed to the user starting from the newest to oldest posts
+- Recipes on the main page show an image of the dish, title, auhor name, excerpt, time stamp and total likes.
+
+
+<details> 
+<summary><strong>About Page</strong></summary>
+
+About Page
+![About Page](readme/features/aboutpage.png)
+</details>
+
+- The About page provides visitors with an overview of the website’s purpose and features a featured image.  
+- Users can read about the inspiration behind the platform and how to navigate through its functionalities.  
+- The page is updated by the admin to ensure accurate and relevant information is displayed.  
+
+<details> 
+<summary><strong>Contact Page</strong></summary>
+
+Contact Page
+![Contact Page](readme/features/contactpage.png)
+</details>
+
+- The Contact page allows visitors and registered users to reach out by filling in their details and message.  
+- Submitted messages are sent to the admin panel, where they can be reviewed and managed.  
+- Users can provide their name, email, and a message to communicate with the site administrators. 
+
+<details> 
+<summary><strong>Sign-Up Page</strong></summary>
+
+Sign-Up Page
+![Sign-Up Page](readme/features/signup.png)
+</details>
+
+- The Sign-Up page allows new users to create an account by providing a username, email, and password.  
+- Upon successful registration, users gain access to features such as adding recipes, commenting, and liking posts. 
+
+<details> 
+<summary><strong>Log-In Page</strong></summary>
+
+Log-In Page
+![Log-In Page](readme/features/login.png)
+</details>
+
+- The Log-In page enables registered users to securely access their accounts using their email and password.  
+- Logged-in users can add, edit, and manage their recipes, leave comments, and like other posts.  
+
+<details> 
+<summary><strong>Logout Page</strong></summary>
+
+Logout Page
+![Logout Page](readme/features/logout.png)
+</details>
+
+- The Logout page allows users to securely sign out of their account with a single click.  
+- After logging out, users are redirected to the homepage or login page for easy navigation.  
+- Logging out ensures user data security and prevents unauthorized access to personal account features. 
+
+
+<details> 
+<summary><strong>Add Recipe Page</strong></summary>
+
+Add Recipe Page
+![Add Recipe Page](readme/features/addrecipe1.png)
+
+![Add Recipe Page](readme/features/addrecipe2.png)
+</details>
+
+- The Add Recipe page allows logged-in users to submit their own recipes to be displayed on the website.  
+- Users can fill in various fields, including the recipe title, a short excerpt, ingredients, preparation steps, cooking time, serving size, and additional notes.  
+- A featured image upload option is available to showcase the dish visually.  
+- The system automatically assigns the logged-in user as the author and generates a unique URL slug based on the title.  
+- Once submitted, the recipe is added to the site, appearing in the recipe list from newest to oldest.  
+- Users can later edit or delete their own recipes if needed.  
+
+
+<details> 
+<summary><strong>Recipe Detail Page</strong></summary>
+
+Recipe Detail Page
+![Recipe Detail Page](readme/features/recipedetail1.png)
+
+Recipe Detail Page for Recipe Author
+![Recipe Detail Page](readme/features/recipedetail2.png)
+</details>
+
+- The Recipe Detail page displays a full view of a selected recipe, including its featured image, title, author, and posting date.  
+- Users can see key details such as preparation and cooking time, serving size, ingredient list, and step-by-step instructions.  
+- A like button allows logged-in users to express appreciation for the recipe, with the total number of likes displayed.  
+- The page includes a comments section where users can read, post, edit, and delete comments related to the recipe.  
+- Logged-in users can interact with the recipe through likes and comments, while visitors can only view the content.  
+- A back button or navigation options help users return to the main recipe list or explore more recipes.  
+
+
+<details> 
+<summary><strong>Comment Section</strong></summary>
+
+Comment Section
+![Comment Section](readme/features/comment-section.png)
+</details>
+
+- The Comment Section allows logged-in users to post, edit, and delete their comments on recipes.  
+- Each comment displays the username, timestamp, and message, appearing in chronological order.  
+- Visitors can read comments, but only registered users can interact by adding or managing their own. 
+
+<details> 
+<summary><strong>Delete Modals</strong></summary>
+
+Delete Modal for comment
+![Delete Modal](readme/features/delete-modal.png)
+
+Delete Page for recipe
+![Delete Modal](readme/features/delete-recipe.png)
+</details>
+
+- A Delete Modal appears for confirmation about deleting a comment
+- A Delete Page appears for confirmation about wanting to delete a recipe post
+
+<details> 
+<summary><strong>Footer</strong></summary>
+
+Footer
+![Footer](readme/features/footer.png)
+</details>
+
+- The Footer provides quick navigation links, social media icons
+
 
 ## CODE TECHNOLOGIES USED
 
