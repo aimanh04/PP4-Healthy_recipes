@@ -393,10 +393,55 @@ During development, testing was conducted primarily on Google Chrome. In product
 - Google Chrome  
 - Microsoft Edge  
 - Mozilla Firefox  
-- Opera 
 
 
 ## VALIDATION
+
+### Validators
+
+#### W3C HTML Validator
+
+<details>
+<summary><strong>HTML Validation</strong></summary>
+
+HTML Validation
+![HTML Test](readme/testing/htmltest.png)
+</details>
+
+#### W3C CSS Jigsaw Validator
+
+<details>
+<summary><strong>CSS Validation</strong></summary>
+
+CSS Validation
+![CSS Test](readme/testing/csstest.png)
+</details>
+
+#### JSHint
+
+<details>
+<summary><strong>JSHint Validation</strong></summary>
+
+JSHint Validation
+![JSHint Test](readme/testing/jshint.png)
+</details>
+
+#### CI Python Linter
+
+<details>
+<summary><strong>Python Linter Validation</strong></summary>
+
+Python Linter Validation
+![Python Linter Test](readme/testing/python-linter.png)
+</details>
+
+
+### Unsolved Bugs
+
+At the time of submission there were two bug errors that remain unsolved but for valid reason. For further information about the bugs:
+
+- [BUG: Validation Errors using Summernote Widget](https://github.com/aimanh04/PP4-Healthy_recipes/issues/17)
+- [BUG: Validation error with AllAuth SignUp Form](https://github.com/aimanh04/PP4-Healthy_recipes/issues/16)
 
 
 ## DEPLOYMENT
