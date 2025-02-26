@@ -330,10 +330,18 @@ Footer
 11. Choose to either "Enable Automatic" or on "Deploy Branch" to deploy the project.
 12. Go on "View" to see your live project.
 
+
+### Cloudinary
+
+1. Log in to your **Cloudinary** account.  
+2. Navigate to the **Dashboard** and locate your **API Environment Variable**.  
+3. Copy the API value, but **remove** `CLOUDINARY_URL=` before adding it to your **Config Vars** in the environment settings.  
+
+
 ### Forking the Github Repository
 The steps to fork the github repository are:
 1. Log in to your [GitHub](https://github.com/).
-2. Go to the repository for !!!!.
+2. Go to the repository for your project.
 3. Click fork on the right hand side of the screen.
 
 ### Making a local clone
@@ -348,10 +356,56 @@ To clone this repository, do the following steps:
 
 ## CREDITS
 
+### Imagery
+
+- [Green Detox Smoothie](https://nourishingmeals.com/recipes/green-detox-smoothie)
+- [Almond Butter Baked Oatmeal](https://sweetsavoryandsteph.com/almond-butter-baked-oatmeal/)
+- [Turkey & Quinoa Stuffed Peppers](https://www.food.com/recipe/healthy-quinoa-and-ground-turkey-stuffed-peppers-449167)
+- [Protein-Packed Chickpea Salad](https://eatwithclarity.com/mediterranean-chickpea-salad/)
+- [Lentil & Sweet Potato Curry](https://wholefoodsoulfoodkitchen.com/sweet-potato-lentil-curry/)
+- [Zucchini & Tomato Gratin](https://www.allrecipes.com/recipe/215420/zucchini-e-pomodori-gratinati-zucchini-and-tomato-gratin/)
+- [Sweet Potato & Kale Frittata](https://www.tastingtable.com/1427904/sweet-potato-and-crispy-kale-frittata-recipe/)
+- [Baked Lemon Herb Chicken with Asparagu](https://cafedelites.com/one-pan-honey-lemon-chicken-asparagus/)
+- [Cauliflower Fried Rice](https://www.onceuponachef.com/recipes/cauliflower-fried-rice.html)
+- [Sweet Potato & Black Bean Tacos](https://www.simplyrecipes.com/recipes/sweet_potato_and_black_bean_tacos/)
+- [Quinoa & Roasted Vegetable Salad](https://www.katysfoodfinds.com/roasted-vegetable-salad-with-quinoa-and-feta/)
+- [Zucchini Noodles with Pesto](https://www.eatingwell.com/recipe/266239/zucchini-noodles-with-pesto-chicken/)
+- [Grilled Salmon with Avocado Salsa](https://ketokarma.com/grilled-salmon-with-avocado-salsa-ready-in-20-minutes/)
+- [Chickpea and Spinach Stew](https://www.eatingwell.com/recipe/270568/hearty-chickpea-spinach-stew/)
+
 ### Special Thanks To
+
+- **I Think Therefore I Blog** This walkthrough was heavily relied upon my project due to time constraint and was extremily helpful. However, I did remake the design and made it my own.
+
+- **Dee Mac Youtube Django Recipe Tutorial** [Django Recipe Tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1&ab_channel=DeeMc)
+
+- **Dev.to** [Django Recipe App Tutorial](https://dev.to/domvacchiano/create-a-recipe-app-in-django-tutorial-5hh)
+
+- **Medium.com** [Django Recipe CRUD Tutorial](https://medium.com/@devsumitg/recipe-crud-project-using-the-django-framework-bootstrap-5-3160ec5b43aa)
 
 - **Code Institute** for providing the foundational python knowledge.
 
 - **Stack Overflow** for helpful solutions regarding python code and error handling.
 
 - **W3Schools** for helpful solutions regarding python code and error handling.
+
+- **Slack Community** for guidance and help
+
+- Special thanks to all the tutors who has helped me in this project with troubleshooting assistance
+
+
+### Other students projects
+
+I took inspiration from other students who made a similar project to mine
+
+* Healthy Food Recipes 
+[Healthy Food Recipes | (https://healthy-food-c44b0f8f09a5.herokuapp.com/)](https://healthy-food-c44b0f8f09a5.herokuapp.com/ "Healthy Food Recipes | (https://healthy-food-c44b0f8f09a5.herokuapp.com/)")
+
+* TasteSENsation    
+[TasteSENsation | Recipe Cookbook (tastesensation-pp4-54d01fbc1628.herokuapp.com)](https://tastesensation-pp4-54d01fbc1628.herokuapp.com/?page=2&rating=None "TasteSENsation | Recipe Cookbook (tastesensation-pp4-54d01fbc1628.herokuapp.com)")
+
+* NicoleJackson89 / pp4-recipe-share    
+[NicoleJackson89 / pp4-recipe-share https://recipe-share-58fcaea24fd7.herokuapp.com/](https://github.com/NicoleJackson89/pp4-recipe-share "NicoleJackson89 / pp4-recipe-share https://recipe-share-58fcaea24fd7.herokuapp.com/")
+
+* Little Rascal Recipes Blog    
+[https://little-rascal-recipes-7007a778b4a8.herokuapp.com/ DeveloperDunne/Little-Rascal-Recipes (github.com)](https://little-rascal-recipes-7007a778b4a8.herokuapp.com/ "https://little-rascal-recipes-7007a778b4a8.herokuapp.com/ DeveloperDunne/Little-Rascal-Recipes (github.com)")
