@@ -11,36 +11,35 @@ from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
-    """ 
-    Retrieves all published recipes from :model:blog.Recipe 
+    """
+    Retrieves all published recipes from :model:blog.Recipe
     and displays them with a pagination limit of 9 posts per page.
     """
     queryset = Recipe.objects.filter(status=1)
-    # queryset = Recipe.objects.all()
     template_name = "blog/index.html"
     paginate_by = 6
-    
-    
+
+
 def recipe_detail(request, slug):
     """
     Displays a single recipe post from :model:`blog.Recipe`.
 
     **Context Variables:**
-    - ``recipe``: The recipe instance.  
-    - ``comments``: Approved comments for the recipe.  
-    - ``total_comments``: Total count of approved comments.  
-    - ``comment_form``: A :form:`blog.CommentForm` instance.  
+    - ``recipe``: The recipe instance.
+    - ``comments``: Approved comments for the recipe.
+    - ``total_comments``: Total count of approved comments.
+    - ``comment_form``: A :form:`blog.CommentForm` instance.
 
-    **Template:**  
+    **Template:**
     :template:`blog/recipe_detail.html`
     """
 
     queryset = Recipe.objects.filter(status=1)
     recipe = get_object_or_404(queryset, slug=slug)
     comments = recipe.comments.all().order_by("-created_on")
-    # comment_count = recipe.comments.filter(approved=True).count()
     comment_count = recipe.comments.count()
     comment_form = CommentForm()
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -48,14 +47,8 @@ def recipe_detail(request, slug):
             comment.author = request.user
             comment.recipe = recipe
             comment.save()
-            #messages.add_message(
-            #    request, messages.SUCCESS,
-            #    'Comment submitted and awaiting approval'
-            # )
-            messages.success(request, 'Comment was posted successfully!')
+            messages.success(request, "Comment was posted successfully!")
             comment_count = recipe.comments.count()
-
-    comment_form = CommentForm()
 
     return render(
         request,
@@ -65,13 +58,15 @@ def recipe_detail(request, slug):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
-        }
+        },
     )
+
 
 class RecipeLikes(View):
     """
     View to handle the like functionality for Posts
     """
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Recipe, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -79,15 +74,14 @@ class RecipeLikes(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+        return HttpResponseRedirect(reverse("recipe_detail", args=[slug]))
 
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    View to edit comments
     """
     if request.method == "POST":
-
         queryset = Recipe.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
@@ -98,11 +92,11 @@ def comment_edit(request, slug, comment_id):
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(request, messages.SUCCESS, "Comment Updated!")
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, "Error updating!")
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
@@ -115,11 +109,11 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your comment has been deleted!')
+        messages.add_message(request, messages.SUCCESS, "Comment deleted!")
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR, "Your comments only!")
 
-    return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+    return HttpResponseRedirect(reverse("recipe_detail", args=[slug]))
 
 
 class RecipeAdd(SuccessMessageMixin, CreateView):
@@ -127,29 +121,29 @@ class RecipeAdd(SuccessMessageMixin, CreateView):
     View to add a new recipe post
     """
     model = Recipe
-    template_name = 'add_recipe.html'
+    template_name = "add_recipe.html"
     form_class = RecipeForm
     success_url = reverse_lazy("home")
-    success_message = 'Recipe added successfully!'
+    success_message = "Recipe added successfully!"
 
     def form_valid(self, form):
         """
-        Assign the current user to the author field"""
+        Assign the current user to the author field
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
-    
+
 
 class EditRecipe(SuccessMessageMixin, UpdateView):
     """
     View to update a recipe post
     """
     model = Recipe
-    template_name = 'edit_recipe.html'
+    template_name = "edit_recipe.html"
     form_class = RecipeForm
     success_url = reverse_lazy("home")
-    success_message = 'Recipe updated successfully!'
+    success_message = "Recipe updated successfully!"
 
-    
     def get_queryset(self):
         """
         Queryset restricting updates to recipes authored by the current user.
@@ -161,8 +155,8 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
         """
         Redirects to the home page upon successful update.
         """
-        return reverse('recipe_detail', kwargs={"slug": self.object.slug})
-    
+        return reverse("recipe_detail", kwargs={"slug": self.object.slug})
+
 
 class DeleteRecipe(SuccessMessageMixin, DeleteView):
     """

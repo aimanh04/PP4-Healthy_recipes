@@ -5,7 +5,7 @@ Link to the live project: [Healthy Recipes](https://aimanh04-healthy-recipes-471
 Welcome to the **Healthy Recipes**!
 Healthy Recipes is a Django-powered web application designed to inspire and assist users in discovering, sharing, and managing nutritious meal ideas. Our platform offers a diverse collection of healthy recipes, each accompanied by detailed instructions, ingredient lists, and nutritional information.​
 
-![Healthy Recipes Am I Responsive Image]()
+![Healthy Recipes Am I Responsive Image](readme/features/responsive.png)
 
 ## TABLE OF CONTENTS
 
@@ -286,7 +286,7 @@ Footer
 - [GitHub](https://GitHub.com/) - To save and store files for the project
 - [Gitpod](https://gitpod.io/) - To use as workspace to code project
 - [VSCode](https://code.visualstudio.com) - Used as workspace for my project
-- [Am I Responsive](https://ui.dev/amiresponsive) - Used to test responsivness
+- [Am I Responsive](https://techsini.com/multi-mockup/index.php) - Used to test responsivness
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate my python code.
 - [Heroku](https://dashboard.heroku.com/) - Used to deploy project.
 - [Chrome Devtools](https://developer.chrome.com/docs/devtools) - Used throughout the process to find bugs and test responsiveness on website
@@ -309,6 +309,91 @@ Footer
 
 
 ## TESTING
+
+### Manual Testing
+
+#### Registration Testing
+
+| Test Case | Status |
+|-----------|--------|
+| Account creation is successful | Passed |
+| Login with created credentials | Passed |
+| Logout functionality works correctly | Passed |
+
+
+#### Navigation Testing
+
+| Test Case | Status |
+|-----------|--------|
+| All pages are accessible | Passed |
+| Navigation menu items are visible | Passed |
+| Users can access posts successfully | Passed |
+
+
+#### User Actions and Expected Outcomes
+
+| Action Performed | Expected Result | Outcome |
+|:---|:---|:---:|
+| Click the "Add Recipe" button | User is taken to the add recipe page | Passed |
+| Click the cancel button on the add recipe page | User is returned to the Home page | Passed |
+| Fill in all fields and submit the recipe | User is redirected to the newly created recipe detail page | Passed |
+| Click the "like" button | Like count increases by 1, and the heart icon turns red or back to grey if already liked | Passed |
+| Click the edit button on the user’s own recipe | User is able to modify the recipe | Passed |
+| Click the delete button on the user’s own recipe | User is directed to a confirmation page to delete the post | Passed |
+| Add a comment and submit it | Comment appears under the recipe detail | Passed |
+| Click the delete button on the user’s own comment | User is redirected to a confirmation page for deletion | Passed |
+| Click the edit button on the user’s own comment | User can edit the comment | Passed |
+| Submit the contact form on the About page | Form is submitted successfully and a confirmation message appears | Passed |
+| Click logout on the navigation bar | User is logged out and redirected to the Home page | Passed |
+
+
+#### Notifications and Errors
+
+| Action | Expected Outcome | Result |
+|:---|:---|:---:|
+| User not logged in | Notification displays "You are not logged in" in the navbar on the home page | Passed |
+| User logs out | Notification: "You have signed out." | Passed |
+| User logs in | Notification: "Successfully signed in as {username}." | Passed |
+| User signs up | Notification: "Successfully signed in as {username}." | Passed |
+| Recipe posted & submitted | Notification: "Recipe added successfully!" | Passed |
+| Recipe edited & submitted | Notification: "Recipe updated successfully!" | Passed |
+| Comment posted | Notification: "Comment was posted successfully!" | Passed |
+| Comment updated | Notification: "Comment Updated!" | Passed |
+| Delete comment confirmation | Notification: "Are you sure you want to delete your comment? This action cannot be undone." | Passed |
+| Comment deleted | Notification: "Your comment has been deleted!" | Passed |
+| Delete recipe confirmation | Notification: "Are you sure you want to delete this recipe? This action cannot be undone." | Passed |
+| Recipe deleted | Notification: "Your recipe has been deleted!" | Passed |
+
+
+#### Layout and Functionality
+
+| Test Action | Expected Result | Outcome |
+|:---|:---|:---:|
+| Recipe posts | Displays recipes from most recent to oldest on the homepage | Passed |
+| Time indicators on posts/comments | Shows the creation time for each post or comment | Passed |
+| "Like" button on homepage | "Like" button and its count are updated accordingly | Passed |
+| Comment count | Correct number of comments is shown | Passed |
+| Author info on posts | Displays the name of the recipe author | Passed |
+| Unique recipe titles | Prevents submission of recipes with identical titles | Passed |
+
+
+### Chrome Developer Tools  
+
+Chrome Developer Tools were utilized throughout the development process to ensure responsiveness. The responsiveness of the webpage was tested by emulating various devices, including:
+
+- Desktops  
+- Laptops  
+- Tablets  
+- Mobile phones  
+
+### Browser Testing  
+
+During development, testing was conducted primarily on Google Chrome. In production, the website has been tested across multiple browsers, including:
+
+- Google Chrome  
+- Microsoft Edge  
+- Mozilla Firefox  
+- Opera 
 
 
 ## VALIDATION
