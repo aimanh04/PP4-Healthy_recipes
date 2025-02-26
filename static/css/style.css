@@ -6,7 +6,7 @@ body {
 
 .hero {
     position: relative;
-    height: 40vh; /* Smaller section height */
+    height: 50vh; /* Smaller section height */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Slightly dark overlay */
         url('https://res.cloudinary.com/dyqlkz4zg/image/upload/v1740578936/hero-image.webp') no-repeat center center;

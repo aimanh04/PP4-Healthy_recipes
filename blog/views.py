@@ -18,7 +18,7 @@ class RecipeList(generic.ListView):
     queryset = Recipe.objects.filter(status=1)
     # queryset = Recipe.objects.all()
     template_name = "blog/index.html"
-    paginate_by = 9
+    paginate_by = 6
     
     
 def recipe_detail(request, slug):
