@@ -10,8 +10,8 @@ Healthy Recipes is a Django-powered web application designed to inspire and assi
 ## TABLE OF CONTENTS
 
 - [USER EXPERIENCE](#user-experience)
-- [FEATURES](#features)
 - [DESIGN](#design)
+- [FEATURES](#features)
 - [CODE TECHNOLOGIES USED](#code-technologies-used)
 - [TESTING](#testing)
 - [VALIDATION](#validation)
@@ -63,10 +63,50 @@ This project applied the MoSCoW prioritization technique to categorize its featu
 - Ensure the platform remains organized and up-to-date with relevant content  
 - Full CRUD functionality to add, edit or delete comments on recipe posts
 
-## FEATURES
-
 
 ## DESIGN
+
+### Color Scheme
+
+![Color Scheme](readme/features/palette.png)
+
+### Database Models
+
+#### 1. User Model
+- Django's AllAuth package is used as the authentication system, managing user registration and login.
+- The model includes essential fields like username, email, and password.
+- A single user can create multiple recipes, establishing a one-to-many relationship between the User and Recipe models.
+
+#### 2. Recipe Model
+- The Recipe model allows users to browse various dishes, while registered users can contribute their own.
+- A one-to-many relationship is maintained, as one user can submit multiple recipes.
+- Users can input details such as recipe title, brief description, featured image, preparation and cooking time, serving size, list of ingredients, step-by-step directions, and any additional notes.
+- Some fields, including slug (auto-generated from the title), author (linked to the logged-in user), and timestamps for creation and modification, are automatically set.
+- The model supports a many-to-many relationship for likes, enabling users to express approval of recipes. These likes are displayed on both the homepage and individual recipe pages.
+- Full CRUD (Create, Read, Update, Delete) capabilities are available for users managing their own recipes.
+
+#### 3. Comment Model
+- Registered users can post comments on recipes, with multiple comments being linked to a single recipe in a many-to-one relationship.
+- Comments display relevant details, including the author, date, and time of submission.
+- Users can create, read, edit, and delete their own comments.
+
+#### 4. Recipe Likes Model
+- This model lets users show appreciation for recipes by liking them.
+- A many-to-one relationship connects multiple likes to a single recipe.
+- Users have the ability to remove their likes whenever they choose.
+
+#### 5. About Model
+- This model provides visitors with background information about the platform and about myself.
+- Fields include a header image, title, and descriptive content.
+- Only the site administrator has permission to update this information, with full CRUD access.
+
+#### 6. Contact Model
+- This model enables communication between users and site administrators by collecting visitor details.
+- Fields include name, email address and a message input for queries or feedback.
+- Submitted messages are directed to the admin dashboard, where administrators can manage, update statuses, and mark them as "read."
+
+
+## FEATURES
 
 
 ## CODE TECHNOLOGIES USED
