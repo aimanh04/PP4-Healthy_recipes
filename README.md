@@ -273,16 +273,39 @@ Footer
 ### Languages
 
 - Python
+- HTML
+- JavaScript
+- CSS
+
+### Databases
+
+- PostgreSQL from Code Institute was used as the PostgreSQL database for this project.
 
 ### Frameworks, Libraries and Programes used
 
 - [GitHub](https://GitHub.com/) - To save and store files for the project
 - [Gitpod](https://gitpod.io/) - To use as workspace to code project
-- [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) - To test the websites performance and accesibility
+- [VSCode](https://code.visualstudio.com) - Used as workspace for my project
 - [Am I Responsive](https://ui.dev/amiresponsive) - Used to test responsivness
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) - Used to validate my python code.
-- [Heroku](https://dashboard.heroku.com/) - Used to deploy python project.
-- Code Institute's Gitpod template to generate IDE workspace.
+- [Heroku](https://dashboard.heroku.com/) - Used to deploy project.
+- [Chrome Devtools](https://developer.chrome.com/docs/devtools) - Used throughout the process to find bugs and test responsiveness on website
+- [JSHint](https://jshint.com/) - To validate JavaScript code
+- [W3C Markup Validation](https://validator.w3.org/) - To validate HTML code
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - To validate CSS code
+- [Pexels](https://www.pexels.com/) - For Hero image
+- [Bootstrap](https://getbootstrap.com) - Used to style website and add better responsiveness and interactivity
+
+
+### Installed Django Packages  
+
+- **Gunicorn**: Used as the web server for deployment on Heroku.  
+- **Cloudinary**: Hosts static and media files for efficient content delivery.  
+- **dj-database-url**: Parses the database URL from Heroku's environment variables.  
+- **psycopg2-binary**: Acts as a PostgreSQL adapter for Python to manage database connections.  
+- **Django Summernote**: Provides a rich-text editor for the admin panel.  
+- **Django Allauth**: Handles authentication, user registration, and account management.  
+- **Crispy Forms**: Enhances form styling for a better user interface.  
 
 
 ## TESTING
